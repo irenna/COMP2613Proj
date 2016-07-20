@@ -67,7 +67,7 @@
             this.listBoxClients.Margin = new System.Windows.Forms.Padding(5);
             this.listBoxClients.Name = "listBoxClients";
             this.listBoxClients.Size = new System.Drawing.Size(260, 764);
-            this.listBoxClients.TabIndex = 0;
+            this.listBoxClients.TabIndex = 2;
             this.listBoxClients.SelectedIndexChanged += new System.EventHandler(this.listBoxClients_SelectedIndexChanged);
             // 
             // panelInputClientData
@@ -97,7 +97,7 @@
             this.panelInputClientData.Location = new System.Drawing.Point(280, 12);
             this.panelInputClientData.Name = "panelInputClientData";
             this.panelInputClientData.Size = new System.Drawing.Size(604, 489);
-            this.panelInputClientData.TabIndex = 1;
+            this.panelInputClientData.TabIndex = 0;
             // 
             // buttonDeleteClient
             // 
@@ -124,7 +124,7 @@
             this.textBoxClientCode.Location = new System.Drawing.Point(231, 31);
             this.textBoxClientCode.Name = "textBoxClientCode";
             this.textBoxClientCode.Size = new System.Drawing.Size(100, 26);
-            this.textBoxClientCode.TabIndex = 19;
+            this.textBoxClientCode.TabIndex = 1;
             // 
             // labelClientCode
             // 
@@ -132,7 +132,7 @@
             this.labelClientCode.Location = new System.Drawing.Point(46, 34);
             this.labelClientCode.Name = "labelClientCode";
             this.labelClientCode.Size = new System.Drawing.Size(95, 20);
-            this.labelClientCode.TabIndex = 18;
+            this.labelClientCode.TabIndex = 0;
             this.labelClientCode.Text = "Client Code:";
             // 
             // buttonSave
@@ -140,7 +140,7 @@
             this.buttonSave.Location = new System.Drawing.Point(408, 439);
             this.buttonSave.Name = "buttonSave";
             this.buttonSave.Size = new System.Drawing.Size(136, 31);
-            this.buttonSave.TabIndex = 17;
+            this.buttonSave.TabIndex = 19;
             this.buttonSave.Text = "Save";
             this.buttonSave.UseVisualStyleBackColor = true;
             this.buttonSave.Click += new System.EventHandler(this.buttonSave_Click);
@@ -150,7 +150,7 @@
             this.textBoxNotes.Location = new System.Drawing.Point(231, 343);
             this.textBoxNotes.Name = "textBoxNotes";
             this.textBoxNotes.Size = new System.Drawing.Size(313, 26);
-            this.textBoxNotes.TabIndex = 16;
+            this.textBoxNotes.TabIndex = 17;
             // 
             // textBoxYtdSales
             // 
@@ -164,42 +164,42 @@
             this.textBoxPostalCode.Location = new System.Drawing.Point(231, 265);
             this.textBoxPostalCode.Name = "textBoxPostalCode";
             this.textBoxPostalCode.Size = new System.Drawing.Size(100, 26);
-            this.textBoxPostalCode.TabIndex = 14;
+            this.textBoxPostalCode.TabIndex = 13;
             // 
             // textBoxProvince
             // 
             this.textBoxProvince.Location = new System.Drawing.Point(231, 226);
             this.textBoxProvince.Name = "textBoxProvince";
             this.textBoxProvince.Size = new System.Drawing.Size(200, 26);
-            this.textBoxProvince.TabIndex = 13;
+            this.textBoxProvince.TabIndex = 11;
             // 
             // textBoxCity
             // 
             this.textBoxCity.Location = new System.Drawing.Point(231, 187);
             this.textBoxCity.Name = "textBoxCity";
             this.textBoxCity.Size = new System.Drawing.Size(313, 26);
-            this.textBoxCity.TabIndex = 12;
+            this.textBoxCity.TabIndex = 9;
             // 
             // textBoxAddress2
             // 
             this.textBoxAddress2.Location = new System.Drawing.Point(231, 148);
             this.textBoxAddress2.Name = "textBoxAddress2";
             this.textBoxAddress2.Size = new System.Drawing.Size(313, 26);
-            this.textBoxAddress2.TabIndex = 11;
+            this.textBoxAddress2.TabIndex = 7;
             // 
             // textBoxAddress1
             // 
             this.textBoxAddress1.Location = new System.Drawing.Point(231, 109);
             this.textBoxAddress1.Name = "textBoxAddress1";
             this.textBoxAddress1.Size = new System.Drawing.Size(313, 26);
-            this.textBoxAddress1.TabIndex = 10;
+            this.textBoxAddress1.TabIndex = 5;
             // 
             // textBoxCompanyName
             // 
             this.textBoxCompanyName.Location = new System.Drawing.Point(231, 70);
             this.textBoxCompanyName.Name = "textBoxCompanyName";
             this.textBoxCompanyName.Size = new System.Drawing.Size(313, 26);
-            this.textBoxCompanyName.TabIndex = 9;
+            this.textBoxCompanyName.TabIndex = 3;
             // 
             // labelNotes
             // 
@@ -207,7 +207,7 @@
             this.labelNotes.Location = new System.Drawing.Point(46, 346);
             this.labelNotes.Name = "labelNotes";
             this.labelNotes.Size = new System.Drawing.Size(55, 20);
-            this.labelNotes.TabIndex = 8;
+            this.labelNotes.TabIndex = 16;
             this.labelNotes.Text = "Notes:";
             // 
             // checkBoxCreditHold
@@ -216,7 +216,7 @@
             this.checkBoxCreditHold.Location = new System.Drawing.Point(50, 387);
             this.checkBoxCreditHold.Name = "checkBoxCreditHold";
             this.checkBoxCreditHold.Size = new System.Drawing.Size(114, 24);
-            this.checkBoxCreditHold.TabIndex = 7;
+            this.checkBoxCreditHold.TabIndex = 18;
             this.checkBoxCreditHold.Text = "Credit Hold";
             this.checkBoxCreditHold.UseVisualStyleBackColor = true;
             // 
@@ -226,7 +226,7 @@
             this.labelYtdSales.Location = new System.Drawing.Point(46, 307);
             this.labelYtdSales.Name = "labelYtdSales";
             this.labelYtdSales.Size = new System.Drawing.Size(152, 20);
-            this.labelYtdSales.TabIndex = 6;
+            this.labelYtdSales.TabIndex = 14;
             this.labelYtdSales.Text = "Year to Date Sales: ";
             // 
             // labelPostalCode
@@ -235,7 +235,7 @@
             this.labelPostalCode.Location = new System.Drawing.Point(46, 268);
             this.labelPostalCode.Name = "labelPostalCode";
             this.labelPostalCode.Size = new System.Drawing.Size(99, 20);
-            this.labelPostalCode.TabIndex = 5;
+            this.labelPostalCode.TabIndex = 12;
             this.labelPostalCode.Text = "Postal Code:";
             // 
             // labelProvince
@@ -244,7 +244,7 @@
             this.labelProvince.Location = new System.Drawing.Point(46, 229);
             this.labelProvince.Name = "labelProvince";
             this.labelProvince.Size = new System.Drawing.Size(73, 20);
-            this.labelProvince.TabIndex = 4;
+            this.labelProvince.TabIndex = 10;
             this.labelProvince.Text = "Province:";
             // 
             // labelCity
@@ -253,7 +253,7 @@
             this.labelCity.Location = new System.Drawing.Point(46, 190);
             this.labelCity.Name = "labelCity";
             this.labelCity.Size = new System.Drawing.Size(39, 20);
-            this.labelCity.TabIndex = 3;
+            this.labelCity.TabIndex = 8;
             this.labelCity.Text = "City:";
             // 
             // labelAddress2
@@ -262,7 +262,7 @@
             this.labelAddress2.Location = new System.Drawing.Point(46, 151);
             this.labelAddress2.Name = "labelAddress2";
             this.labelAddress2.Size = new System.Drawing.Size(85, 20);
-            this.labelAddress2.TabIndex = 2;
+            this.labelAddress2.TabIndex = 6;
             this.labelAddress2.Text = "Address 2:";
             // 
             // labelAddress1
@@ -271,7 +271,7 @@
             this.labelAddress1.Location = new System.Drawing.Point(46, 112);
             this.labelAddress1.Name = "labelAddress1";
             this.labelAddress1.Size = new System.Drawing.Size(72, 20);
-            this.labelAddress1.TabIndex = 1;
+            this.labelAddress1.TabIndex = 4;
             this.labelAddress1.Text = "Address:";
             // 
             // labelCompanyName
@@ -280,7 +280,7 @@
             this.labelCompanyName.Location = new System.Drawing.Point(46, 73);
             this.labelCompanyName.Name = "labelCompanyName";
             this.labelCompanyName.Size = new System.Drawing.Size(126, 20);
-            this.labelCompanyName.TabIndex = 0;
+            this.labelCompanyName.TabIndex = 2;
             this.labelCompanyName.Text = "Company Name:";
             // 
             // panelViewClientData
@@ -290,7 +290,7 @@
             this.panelViewClientData.Location = new System.Drawing.Point(280, 507);
             this.panelViewClientData.Name = "panelViewClientData";
             this.panelViewClientData.Size = new System.Drawing.Size(604, 264);
-            this.panelViewClientData.TabIndex = 2;
+            this.panelViewClientData.TabIndex = 1;
             // 
             // labelClientData
             // 

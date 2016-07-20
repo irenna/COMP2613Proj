@@ -168,6 +168,7 @@ namespace COMP2614Assign06
                               , Address2 = this.Address2
                               , City = this.City
                               , Province = this.Province
+                              , PostalCode = this.PostalCode
                               , YtdSales = this.YtdSales
                               , CreditHold = this.CreditHold
                               , Notes = this.Notes };

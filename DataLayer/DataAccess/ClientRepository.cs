@@ -110,7 +110,8 @@ namespace DataLayer.DataAccess
                                 Province = province,
                                 PostalCode = postalCode,
                                 YtdSales = ytdSales,
-                                CreditHold = hasCreditHold
+                                CreditHold = hasCreditHold,
+                                Notes = notes
                             });
                         }
                     }
@@ -205,7 +206,7 @@ namespace DataLayer.DataAccess
                                         , ", PostalCode = @postalCode"
                                         , ", YTDSales = @ytdSales"
                                         , ", CreditHold = @creditHold"
-                                        , ", Notes = @notess"
+                                        , ", Notes = @notes"
                                         , "WHERE ClientCode = @clientCode");
 
 
