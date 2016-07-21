@@ -14,10 +14,16 @@ using DataLayer.Validation;
 
 namespace COMP2614Assign06
 {
+    /// <summary>
+    /// Main class for form
+    /// </summary>
     public partial class MainForm : Form
     {
         private ClientViewModel clientVM;
 
+        /// <summary>
+        /// Main Form constructor
+        /// </summary>
         public MainForm()
         {
             InitializeComponent();
@@ -33,6 +39,7 @@ namespace COMP2614Assign06
 
             catch (SqlException ex)
             {
+                //I think it makes sense to leave these as message boxes.  In theory, they shouldn't even happen.
                 MessageBox.Show(ex.Message, "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -52,7 +59,7 @@ namespace COMP2614Assign06
             textBoxCity.DataBindings.Add("Text", clientVM, "City");
             textBoxPostalCode.DataBindings.Add("Text", clientVM, "PostalCode");
             textBoxNotes.DataBindings.Add("Text", clientVM, "Notes");
-            textBoxYtdSales.DataBindings.Add("Text", clientVM, "YtdSales", true, DataSourceUpdateMode.OnValidation, "0.00", "#,##0.00;(#,##0.00));0.00");
+            textBoxYtdSales.DataBindings.Add("Text", clientVM, "YtdSales", true, DataSourceUpdateMode.OnValidation, "0.00", "#,##0.00;(#,##0.00);0.00");
             checkBoxCreditHold.DataBindings.Add("Checked", clientVM, "CreditHold");
 
             listBoxClients.DataSource = clientVM.Clients;
@@ -65,8 +72,6 @@ namespace COMP2614Assign06
             Client client = clientVM.Clients[selectedIndex];
             clientVM.SetDisplayClient(client);
             textBoxClientCode.ReadOnly = true;
-            labelClientLegend.Text = string.Empty;
-            labelClientData.Text = string.Empty;
         }
 
         private void buttonSave_Click(object sender, EventArgs e)
@@ -74,31 +79,39 @@ namespace COMP2614Assign06
             try
             {
                 Client client = clientVM.GetDisplayClient();
-                int rowsAffected;
+                List<string> errorList;
                 if (!textBoxClientCode.ReadOnly)
                 {
                     //New Client
-                    rowsAffected = ClientValidation.AddClient(client);
+                    errorList = ClientValidation.AddClient(client);
                 }
                 else
                 {
                     //Existing Client
-                    rowsAffected = ClientValidation.UpdateClient(client);
+                    errorList = ClientValidation.UpdateClient(client);
                 }
 
-                if (rowsAffected > 0)
+                if (errorList.Count == 0)
                 {
                     clientVM.Clients = ClientRepository.GetClients();
                     listBoxClients.DataSource = clientVM.Clients;
                     listBoxClients.DisplayMember = "ClientCode";
-                } 
-                else if (rowsAffected == 0)
+                    errorProvider.SetError(buttonSave, string.Empty);
+                }
+                else if (errorList.Count > 0)
                 {
-                    MessageBox.Show("Error creating or updating client", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    StringBuilder errorText = new StringBuilder();
+                    errorText.Append("Error:\r\n");
+                    foreach (string error in errorList)
+                    {
+                        errorText.Append(error + "\r\n");
+                    }
+                    errorProvider.SetError(buttonSave, errorText.ToString());
                 }
             }
             catch (SqlException ex)
             {
+                //I think it makes sense to leave these as message boxes.  In theory, they shouldn't even happen.
                 MessageBox.Show(ex.Message, "DB Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
@@ -112,6 +125,7 @@ namespace COMP2614Assign06
 
         private void buttonNewClient_Click(object sender, EventArgs e)
         {
+            errorProvider.SetError(buttonSave, string.Empty);
             clientVM.SetDisplayClient(new Client());
             textBoxClientCode.ReadOnly = false;
             textBoxClientCode.Select();
@@ -120,6 +134,9 @@ namespace COMP2614Assign06
 
         private void buttonDeleteClient_Click(object sender, EventArgs e)
         {
+            
+            errorProvider.SetError(buttonSave, string.Empty);
+
             try
             {
                 Client product = clientVM.GetDisplayClient();

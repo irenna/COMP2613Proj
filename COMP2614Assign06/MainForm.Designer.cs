@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listBoxClients = new System.Windows.Forms.ListBox();
             this.panelInputClientData = new System.Windows.Forms.Panel();
             this.buttonDeleteClient = new System.Windows.Forms.Button();
@@ -52,11 +53,9 @@
             this.labelAddress2 = new System.Windows.Forms.Label();
             this.labelAddress1 = new System.Windows.Forms.Label();
             this.labelCompanyName = new System.Windows.Forms.Label();
-            this.panelViewClientData = new System.Windows.Forms.Panel();
-            this.labelClientData = new System.Windows.Forms.Label();
-            this.labelClientLegend = new System.Windows.Forms.Label();
+            this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelInputClientData.SuspendLayout();
-            this.panelViewClientData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // listBoxClients
@@ -66,7 +65,7 @@
             this.listBoxClients.Location = new System.Drawing.Point(12, 12);
             this.listBoxClients.Margin = new System.Windows.Forms.Padding(5);
             this.listBoxClients.Name = "listBoxClients";
-            this.listBoxClients.Size = new System.Drawing.Size(260, 764);
+            this.listBoxClients.Size = new System.Drawing.Size(260, 484);
             this.listBoxClients.TabIndex = 2;
             this.listBoxClients.SelectedIndexChanged += new System.EventHandler(this.listBoxClients_SelectedIndexChanged);
             // 
@@ -96,7 +95,7 @@
             this.panelInputClientData.Controls.Add(this.labelCompanyName);
             this.panelInputClientData.Location = new System.Drawing.Point(280, 12);
             this.panelInputClientData.Name = "panelInputClientData";
-            this.panelInputClientData.Size = new System.Drawing.Size(604, 489);
+            this.panelInputClientData.Size = new System.Drawing.Size(604, 484);
             this.panelInputClientData.TabIndex = 0;
             // 
             // buttonDeleteClient
@@ -283,38 +282,17 @@
             this.labelCompanyName.TabIndex = 2;
             this.labelCompanyName.Text = "Company Name:";
             // 
-            // panelViewClientData
+            // errorProvider
             // 
-            this.panelViewClientData.Controls.Add(this.labelClientData);
-            this.panelViewClientData.Controls.Add(this.labelClientLegend);
-            this.panelViewClientData.Location = new System.Drawing.Point(280, 507);
-            this.panelViewClientData.Name = "panelViewClientData";
-            this.panelViewClientData.Size = new System.Drawing.Size(604, 264);
-            this.panelViewClientData.TabIndex = 1;
-            // 
-            // labelClientData
-            // 
-            this.labelClientData.Location = new System.Drawing.Point(280, 33);
-            this.labelClientData.Name = "labelClientData";
-            this.labelClientData.Size = new System.Drawing.Size(292, 224);
-            this.labelClientData.TabIndex = 1;
-            this.labelClientData.Text = "a\r\nb\r\nc\r\nd\r\ne\r\nf\r\ng\r\nh\r\ni";
-            // 
-            // labelClientLegend
-            // 
-            this.labelClientLegend.Location = new System.Drawing.Point(42, 33);
-            this.labelClientLegend.Name = "labelClientLegend";
-            this.labelClientLegend.Size = new System.Drawing.Size(160, 224);
-            this.labelClientLegend.TabIndex = 0;
-            this.labelClientLegend.Text = "1\r\n2\r\n3\r\n4\r\n5\r\n6\r\n7\r\n8\r\n9\r\n";
+            this.errorProvider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.errorProvider.ContainerControl = this;
             // 
             // MainForm
             // 
             this.AcceptButton = this.buttonSave;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(896, 789);
-            this.Controls.Add(this.panelViewClientData);
+            this.ClientSize = new System.Drawing.Size(896, 506);
             this.Controls.Add(this.panelInputClientData);
             this.Controls.Add(this.listBoxClients);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -325,7 +303,7 @@
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panelInputClientData.ResumeLayout(false);
             this.panelInputClientData.PerformLayout();
-            this.panelViewClientData.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -352,13 +330,11 @@
         private System.Windows.Forms.Label labelAddress2;
         private System.Windows.Forms.Label labelAddress1;
         private System.Windows.Forms.Label labelCompanyName;
-        private System.Windows.Forms.Panel panelViewClientData;
-        private System.Windows.Forms.Label labelClientData;
-        private System.Windows.Forms.Label labelClientLegend;
         private System.Windows.Forms.Label labelClientCode;
         private System.Windows.Forms.TextBox textBoxClientCode;
         private System.Windows.Forms.Button buttonDeleteClient;
         private System.Windows.Forms.Button buttonNewClient;
+        private System.Windows.Forms.ErrorProvider errorProvider;
     }
 }
 

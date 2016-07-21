@@ -9,6 +9,7 @@ using DataLayer.Common;
 
 namespace COMP2614Assign06
 {
+
     class ClientViewModel : INotifyPropertyChanged
     {
         private string clientCode;
